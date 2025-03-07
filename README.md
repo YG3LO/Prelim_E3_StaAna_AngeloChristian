@@ -1,6 +1,5 @@
 # Prelim_E3_StaAna_AngeloChristian
 PRELIM EXAM
-Created with CodeSandbox
 
 *Overview
 This app allows users to manage their profile, change their Fullname and Username, upload a profile picture, and toggle between dark and light mode.
