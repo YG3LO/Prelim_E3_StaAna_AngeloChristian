@@ -2,6 +2,7 @@
 PRELIM EXAM
 
 *Overview
+
 This app allows users to manage their profile, change their Fullname and Username, upload a profile picture, and toggle between dark and light mode.
 
 INSTRUCTIONS
