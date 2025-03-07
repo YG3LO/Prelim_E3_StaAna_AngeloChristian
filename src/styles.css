@@ -1,0 +1,569 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #ff9900;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20px; 
+  z-index: 1000;
+}
+
+.home-icon-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-icon {
+  font-size: 35px;
+  color: #ffffff; 
+}
+
+
+.dark-mode .home-icon {
+  color: #000 !important; 
+}
+
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  right: 20px;
+  top: 80px;
+}
+
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ff9900;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  left: 60px;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.default-profile-icon {
+  font-size: 46px; 
+  color: gray;
+}
+
+
+.username {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff9900;
+  position: absolute;
+  right: 30px; 
+  top: 11px; 
+}
+
+
+.profile-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.profile-actions button {
+  background-color: #fff;
+  color: #ff9900;
+  padding: 8px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-actions {
+  position: relative;
+  top: 50px; 
+}
+
+.profile-actions button:hover {
+  background-color: #e0e0e0;
+}
+
+.welcome-container {
+  display: flex;
+  color: #ff9900;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.profile-preview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #ff9900;
+  padding: 40px; 
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 16px; 
+  text-align: center;
+  width: 500px; 
+  max-width: 90%; 
+  height: auto;
+}
+.profile-preview img {
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #ff9900; 
+  margin-bottom: 15px;
+}
+
+body.dark-mode .profile-preview {
+  background: #222 !important; 
+  color: white !important; 
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1) !important; 
+}
+
+.profile-preview-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.back-btn {
+  background: #ff9900;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+.edit-profile-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white; 
+  color: #ff9900; 
+  padding: 25px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  width: 380px;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .edit-profile-modal h2 {
+  color: #fff; 
+}
+
+body.dark-mode .edit-profile-modal {
+  background: #222; 
+  color: #fff; 
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1); 
+}
+
+body.dark-mode label {
+  color: #fff; 
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #222 !important; 
+  color: #fff !important; 
+  border: 1px solid #555 !important; 
+}
+
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb !important; 
+}
+
+
+.edit-profile-modal h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ff9900;
+}
+
+.edit-profile-modal label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff9900;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.file-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 2px dashed #ff9900;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f9f9f9;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ff9900;
+  transition: 0.3s ease;
+}
+
+.file-input:hover {
+  background: #e7f0ff;
+}
+
+.profile-picture-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.profile-picture-preview img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff9900;
+  transition: 0.3s ease;
+}
+
+.remove-photo-btn {
+  background: #ff3b3b;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px auto; 
+  transition: 0.3s ease;
+  justify-content: center;
+}
+
+.remove-photo-btn:hover {
+  background: #cc2c2c;
+}
+
+.edit-profile-modal input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  margin: 7px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.edit-profile-modal input[type="text"]:focus {
+  border-color: #ff9900;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+.btn-update {
+  background: #ff9900;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px; 
+  font-weight: bold;
+  transition: 0.3s ease;
+  flex: 0.5; 
+  text-align: center;
+}
+
+.btn-update:hover {
+  background: #444;
+}
+
+.btn-cancel {
+  background: #979494;
+  color: #ff9900;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  flex: 0.5; 
+  text-align: center;
+}
+
+.btn-cancel:hover {
+  background: #3a3939;
+}
+
+.profile-info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.profile-info .username {
+  font-size: 12px;
+  color: #ff9900;
+}
+
+.profile-info .full-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 25px;
+  background: #ff9900;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.toggle-switch.dark {
+  background: #ff9900; 
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  transition: 0.3s ease;
+}
+
+.toggle-switch.dark .circle {
+  left: 27px;
+}
+
+.settings-container {
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+.settings-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-align: center;
+}
+
+.dark-mode .settings-modal {
+  background: #333;
+  color: white;
+}
+
+.close-settings {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #ff9900;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+input:checked + .slider {
+  background-color: #ff9900;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.settings-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-align: center;
+}
+
+.close-settings-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button {
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+button {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+.dark-mode button {
+  background-color: #333;
+  color: color: #ff9900;;
+  border: 1px solid #555;
+}
+
+.dark-mode button:hover {
+  background-color: #555;
+}
+.username {
+  font-weight: bold;
+  color: color: #ff9900;; 
+}
+.dark-mode .username {
+  color: color: #ff9900;; 
+}
+body.dark-mode input {
+  background: #333;
+  color: color: #ff9900;;
+  border: 1px solid #555;
+}
+
+body.dark-mode input::placeholder {
+  color: #bbb;
+}
+body.dark-mode input[type="file"] {
+  background: #444;
+  color: white;
+  border: 1px solid #666;
+}
+body.dark-mode .btn-update{
+  color:  #444;
+  background: #ff9900;
+}
+body.dark-mode .btn-cancel,
+body.dark-mode .btn-remove {
+  background: #444;
+  color:  #ff9900;
+}
+
+body.dark-mode .btn-cancel:hover{
+  background: #584d3b;
+}
+body.dark-mode .btn-update:hover,
+body.dark-mode .btn-remove:hover {
+  background: #bdbaba;
+}
+
+.username {
+  display: block;
+  width: 120px; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px auto;
+}
